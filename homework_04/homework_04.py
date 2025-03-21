@@ -1,7 +1,5 @@
 import re
-from idlelib.tree import wheel_event
 
-from lesson_01.homework_01 import present
 
 adwentures_of_tom_sawer = """\
 Tom gave up the brush with reluctance in his .... face but alacrity
@@ -84,7 +82,7 @@ for index in adwentures_of_tom_sawer_sentences:
     if index.startswith("By the time"):
         print("Є таке речення")
         break
-print("Немає такого речення")
+
 # task 10
 """ Виведіть кількість слів останнього речення з adwentures_of_tom_sawer_sentences.
 """
