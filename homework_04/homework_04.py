@@ -36,7 +36,7 @@ adwentures_of_tom_sawer = adwentures_of_tom_sawer.replace("....", " ")
 # task 03 ==
 """ Зробіть так, щоб у тексті було не більше одного пробілу між словами.
 """
-adwentures_of_tom_sawer = re.sub(r'\s+', ' ', adwentures_of_tom_sawer)
+adwentures_of_tom_sawer = ' '.join(adwentures_of_tom_sawer.split())
 # task 04
 """ Виведіть, скількі разів у тексті зустрічається літера "h"
 """
