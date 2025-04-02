@@ -126,15 +126,22 @@ list_with_str(['1', '2', 3, True, 'False', 5, '6', 7, 8, 'Python', 9, 0, 'Lorem 
 # Цикл не повинен завершитися, якщо користувач ввів слово без букви "h".
 
 def give_me_h(my_str):
-    while True:
+    lower_my_str = my_str.lower()
+    while "h" not in lower_my_str:
+        one_more_try = input("Введи ще раз:")
+        return give_me_h(one_more_try)
+    return print("дякую")
+
+
+
         #my_str = input("Введи слово, в якому буде хоч одна 'h' :")
-        find_h = my_str.lower()
-        if find_h.find("h") != -1:
-            print("дякую")
-            return True
-        else:
-            one_more_try = input("Введи ще раз:")
-            give_me_h(one_more_try)
+        # find_h = my_str.lower()
+        # if find_h.find("h") != -1:
+        #     print("дякую")
+        #     return True
+        # else:
+        #     one_more_try = input("Введи ще раз:")
+        #     give_me_h(one_more_try)
 
 give_me_h(input("Введи слово, в якому буде хоч одна 'h' :"))
 #Порахувати кількість унікальних символів в строці.
