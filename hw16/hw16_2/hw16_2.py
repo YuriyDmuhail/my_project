@@ -55,3 +55,5 @@ for figure in figures:
     print(f"  Площа: {figure.area():.2f}")
     print(f"  Периметр: {figure.perimeter():.2f}")
 
+
+
