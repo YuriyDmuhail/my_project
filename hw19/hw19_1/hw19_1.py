@@ -14,8 +14,9 @@ if response.status_code == 200:
         request_photo = requests.get(photo_url)
 
         if request_photo.status_code == 200:
-            with open("photo_url", "wb") as file:
+            with open(f"photo{item.get("id")}.png", "wb") as file:
                 file.write(response.content)
+
         else:
             print('Не вдалося зробити запит. Код помилки:', request_photo.status_code)
 else:
