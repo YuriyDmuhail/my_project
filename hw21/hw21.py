@@ -9,7 +9,7 @@ def filter_heart_beat_log(key):
         for line in file.readlines():
             if key in line.strip():
                 filtered_heart_beat_log.append(line)
-    print(filtered_heart_beat_log)
+    #print(filtered_heart_beat_log)
 
     return filtered_heart_beat_log
 
