@@ -31,14 +31,12 @@ class TestCarApi:
     ])
     def test_car_search(self, get_auth_cars_api_token, sort_by, limit):
         url = f"{BASE_URL}/cars"
-        headers = {
-                "Authorization": f"Bearer {get_auth_cars_api_token}"
-            }
+
         params = {
             "sort_by": sort_by,
             "limit": limit
         }
-        response = requests.get(url=url, headers=headers, params=params)
+        response = get_auth_cars_api_token.get(url=url, params=params)
         logger.info(f"GET /cars | sort_by={sort_by} | limit={limit} | status={response.status_code}")
         assert response.status_code == 200
 

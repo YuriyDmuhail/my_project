@@ -10,12 +10,17 @@ def get_auth_cars_api_token():
     url = f"{BASE_URL}/auth"
     # username = "test_user",
     # password = "test_pass"
-    response = requests.post(url= url, auth=HTTPBasicAuth(
+    response = requests.post(url=url, auth=HTTPBasicAuth(
         "test_user", # Якщо я вставляю параметр username, то отримую 401 , не знаю чому так
         "test_pass" # Якщо я вставляю параметр password, то отримую 401
     ))
     token = response.json().get("access_token")
-    yield token
+
+    session  = requests.Session()
+    session.headers.update({"Authorization": f"Bearer {token}"})
+    yield session
+
+    session.close()
 
 # def get_car_api(auth_token, sort_by=None, limit=None):
 #     url = f"{BASE_URL}/cars"
