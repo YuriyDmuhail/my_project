@@ -1,0 +1,22 @@
+sign_up = "button.hero-descriptor_btn btn btn-primary"
+about_title= 'button[appscrollto="aboutSection"]'
+contats_title = 'button[appscrollto="contactsSection"]'
+yt_channel_logo = "div.ytp-title-channel.ytp-title-show-collapsed > a.ytp-title-channel-logo"
+yt_thumbnail_btn = "div.ytp-cued-thumbnail-overlay > button > svg"
+yt_watch_later_title = "div.ytp-watch-later-title"
+yt_share_title = "div.ytp-share-title"
+yt_video_title_link = "div.ytp-title-text > a.ytp-title-link.yt-uix-sessionlink"
+yt_share_icon = "div.ytp-share-icon > svg"
+yt_watch_later_icon = "div.ytp-watch-later-icon > svg"
+signin_btn = "button.header_signin"
+guest_login_btn = "button.header-link.-guest"
+instagram_icon = "span.icon-instagram"
+linkedin_icon = "span.icon-linkedin"
+facebook_icon = "span.icon-facebook"
+telegram_icon = "span.icon-telegram"
+youtube_icon = "span.icon-youtube"
+email_link = 'a.contacts_link.h4[href^="mailto:"]'
+svg_logo = "svg[xmlns='http://www.w3.org/2000/svg']"
+hero_descr = "p.hero-descriptor_descr.lead"
+about_title2 = "p.about-block_title.h2"
+about_descr = "p.about-block_descr.lead"
