@@ -1,5 +1,8 @@
 # XPath локатори (тип str)
 
+
+
+
 nav_links = "//nav/a"
 header_btn_1 = "//button[@class='btn header-link'][1]"
 header_btn_2 = "//button[@class='btn header-link'][2]"
