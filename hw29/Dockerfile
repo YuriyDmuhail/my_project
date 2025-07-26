@@ -7,4 +7,6 @@ COPY app/requirements.txt .
 
 RUN pip install --no-cache-dir -r requirements.txt
 
-CMD ["pytest", "app"]
+RUN pip install allure-pytest
+
+CMD ["pytest", "app", "-q", "--alluredir=/allure-results"]

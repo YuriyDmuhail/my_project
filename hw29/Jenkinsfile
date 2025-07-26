@@ -1,0 +1,47 @@
+pipeline {
+    agent any
+
+    environment {
+        GITHUB_TOKEN = credentials('github-token')
+    }
+
+    stages {
+        stage('Checkout') {
+            steps {
+                git 'https://github.com/YuriyDmuhail/my_project.git'
+            }
+        }
+
+        stage('Install dependencies') {
+            steps {
+                dir('python-docker-tests') {
+                    bat 'pip install -r requirements.txt'
+                }
+            }
+        }
+
+        stage('Run Tests') {
+            steps {
+                dir('python-docker-tests') {
+                    bat 'pytest --alluredir=allure-results'
+                }
+            }
+        }
+
+        stage('Allure Report') {
+            steps {
+                dir('python-docker-tests') {
+                    allure includeProperties: false, jdk: '', results: [[path: 'allure-results']]
+                }
+            }
+        }
+
+        stage('Email') {
+            steps {
+                mail to: 'InsertYour@Mail.Here',
+                     subject: "Build finished: ${env.JOB_NAME} #${env.BUILD_NUMBER}",
+                     body: "Check the results at ${env.BUILD_URL}"
+            }
+        }
+    }
+}
