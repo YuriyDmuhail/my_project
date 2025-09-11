@@ -20,6 +20,8 @@ services:
       - db
     networks:
       - backend
+    volumes:
+      - ./allure-results:/allure-results
 
 networks:
   backend:
